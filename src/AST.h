@@ -601,6 +601,8 @@ class CAstProperty : public CAstExpression
 {
 public:
   CAstProperty(v8i::Zone *zone, v8i::Property *prop) : CAstExpression(zone, prop) {}
+  py::object obj(void) const { return to_python(m_zone, as<v8i::Property>()->obj()); }
+  py::object key(void) const { return to_python(m_zone, as<v8i::Property>()->key()); }
 };
 
 class CAstCall : public CAstExpression

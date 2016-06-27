@@ -310,6 +310,8 @@ void CAstNode::Expose(void)
     ;
 
   py::class_<CAstProperty, py::bases<CAstExpression> >("AstProperty", py::no_init)
+    .add_property("obj", &CAstProperty::obj)
+    .add_property("key", &CAstProperty::key)
     ;
 
   py::class_<CAstCall, py::bases<CAstExpression> >("AstCall", py::no_init)

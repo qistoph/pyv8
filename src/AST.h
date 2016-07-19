@@ -533,6 +533,12 @@ public:
   bool IsNull(void) const { return as<v8i::Literal>()->IsNull(); }
   bool IsTrue(void) const { return as<v8i::Literal>()->IsTrue(); }
   bool IsFalse(void) const { return as<v8i::Literal>()->IsFalse(); }
+  bool IsUndefined(void) const { return as<v8i::Literal>()->IsUndefined(); }
+  bool IsNumber(void) const { return as<v8i::Literal>()->IsNumber(); }
+  bool IsJSObject(void) const { return as<v8i::Literal>()->IsJSObject(); }
+  bool IsJSFunction(void) const { return as<v8i::Literal>()->IsJSFunction(); }
+  bool IsJSArray(void) const { return as<v8i::Literal>()->IsJSArray(); }
+  bool IsFixedArray(void) const { return as<v8i::Literal>()->IsFixedArray(); }
 };
 
 class CAstMaterializedLiteral : public CAstExpression

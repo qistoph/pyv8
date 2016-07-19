@@ -265,6 +265,12 @@ void CAstNode::Expose(void)
     .add_property("isNull", &CAstLiteral::IsNull)
     .add_property("isTrue", &CAstLiteral::IsTrue)
     .add_property("isFalse", &CAstLiteral::IsFalse)
+	.add_property("isUndefined", &CAstLiteral::IsUndefined)
+	.add_property("isNumber", &CAstLiteral::IsNumber)
+	.add_property("IsJSObject", &CAstLiteral::IsJSObject)
+	.add_property("isJSFunction", &CAstLiteral::IsJSFunction)
+	.add_property("isJSArray", &CAstLiteral::IsJSArray)
+	.add_property("isFixedArray", &CAstLiteral::IsFixedArray)
     .add_property("asPropertyName", &CAstLiteral::AsPropertyName)
     ;
 

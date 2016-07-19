@@ -1366,6 +1366,31 @@ class Literal V8_FINAL : public Expression {
     ASSERT(!value_.is_null());
     return value_->IsFalse();
   }
+  bool IsUndefined() const {
+    ASSERT(!value_.is_null());
+    return value_->IsUndefined();
+  }
+  bool IsNumber() const {
+    ASSERT(!value_.is_null());
+    return value_->IsNumber();
+  }
+  bool IsJSObject() const {
+    ASSERT(!value_.is_null());
+    return value_->IsJSObject();
+  }
+  bool IsJSFunction() const {
+    ASSERT(!value_.is_null());
+    return value_->IsJSFunction();
+  }
+  bool IsJSArray() const {
+    ASSERT(!value_.is_null());
+    return value_->IsJSArray();
+  }
+  bool IsFixedArray() const {
+    ASSERT(!value_.is_null());
+    return value_->IsFixedArray();
+  }
+
 
   Handle<Object> value() const { return value_; }
 

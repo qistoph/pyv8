@@ -426,7 +426,7 @@ def build_v8():
     print("INFO: Patching the GYP scripts")
 
     # Next up, we have to patch the SConstruct file from the v8 source to remove -no-rtti and -no-exceptions
-    gypi = os.path.join(V8_HOME, "build/standalone.gypi")
+    gypi = os.path.join(V8_HOME, "gypfiles/standalone.gypi")
 
     # Check if we need to patch by searching for rtti flag in the data
     with open(gypi, 'r') as f:
@@ -441,9 +441,9 @@ def build_v8():
                                      .replace("'GCC_ENABLE_CPP_RTTI': 'NO'", "'GCC_ENABLE_CPP_RTTI': 'YES'")
 
     if build_script == fixed_build_script:
-        print("INFO: skip to patch the Google v8 build/standalone.gypi file ")
+        print("INFO: skip to patch the Google v8 gypfiles/standalone.gypi file ")
     else:
-        print("INFO: patch the Google v8 build/standalone.gypi file to enable RTTI and C++ Exceptions")
+        print("INFO: patch the Google v8 gypfiles/standalone.gypi file to enable RTTI and C++ Exceptions")
 
         if os.path.exists(gypi + '.bak'):
             os.remove(gypi + '.bak')

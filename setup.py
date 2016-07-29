@@ -243,9 +243,9 @@ elif is_linux or is_freebsd:
         extra_link_args += ["-lrt"] # make ubuntu happy
 
     if DEBUG:
-        extra_compile_args += ['-g', '-O0', '-fno-inline']
+        extra_compile_args += ['-std=c++11', '-g', '-O0', '-fno-inline']
     else:
-        extra_compile_args += ['-g', '-O3']
+        extra_compile_args += ['-std=c++11', '-g', '-O3']
 
 elif is_mac: # contribute by Artur Ventura
     include_dirs += [
